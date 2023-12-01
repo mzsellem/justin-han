@@ -12,7 +12,7 @@ export default function Home() {
             src="/happy-justin.png"
             alt="justin in a park"
           />
-          <div className="absolute top-0 md:right-0 mt-6">
+          <div className="absolute top-0 md:right-0 mt-6 md:mr-6">
             <Intro />
           </div>
         </div>
