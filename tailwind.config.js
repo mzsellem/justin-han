@@ -10,9 +10,13 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        mono: ['Cutive Mono', 'monospace'],
+      },
       colors: {
         'bluesuit': '#26233D',
         'grey': '#eeeff7',
+        'treegreen': '#479552',
       }
     },
   },
