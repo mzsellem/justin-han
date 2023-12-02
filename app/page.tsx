@@ -25,13 +25,13 @@ export default function Home() {
   return (
     <>
       <div className="flex">
-          <div className="md:text-lg text-xs font-mono font-bold bg-bluesuit text-white h-screen w-1/5 md:p-4 flex flex-col justify-center">
+          <div className="md:text-lg text-xs font-mono font-bold bg-bluesuit text-white h-screen w-1/5 flex flex-col justify-center items-center">
             <div className="flex flex-col space-y-8">
-              <button onClick={() => scrollToSectionWithOffset(section1Ref, 65)} className="border hover:bg-yellowlight p-2 rounded-md">Home</button>
-              <button onClick={() => scrollToSectionWithOffset(section2Ref, 65)} className="border hover:bg-treegreen p-2 rounded-md">Bio</button>
-              <button onClick={() => scrollToSectionWithOffset(section3Ref, 65)} className="border hover:bg-treegreen p-2 rounded-md">Media</button>
-              <button onClick={() => scrollToSectionWithOffset(section4Ref, 65)} className="border hover:bg-treegreen p-2 rounded-md">Events</button>
-              <button onClick={() => scrollToSectionWithOffset(section5Ref, 65)} className="border hover:bg-treegreen p-2 rounded-md">Contact</button>
+              <button onClick={() => scrollToSectionWithOffset(section1Ref, 65)} className="border hover:bg-yellowlight p-2 m-2 rounded-md">Home</button>
+              <button onClick={() => scrollToSectionWithOffset(section2Ref, 65)} className="border hover:bg-treegreen p-2 m-2 rounded-md">Bio</button>
+              <button onClick={() => scrollToSectionWithOffset(section3Ref, 65)} className="border hover:bg-treegreen p-2 m-2 rounded-md">Media</button>
+              <button onClick={() => scrollToSectionWithOffset(section4Ref, 65)} className="border hover:bg-treegreen p-2 m-2 rounded-md">Events</button>
+              <button onClick={() => scrollToSectionWithOffset(section5Ref, 65)} className="border hover:bg-treegreen p-2 m-2 rounded-md">Contact</button>
             </div>
           </div>
         <div className="flex flex-col justify-center items-center w-screen h-screen overflow-hidden">
