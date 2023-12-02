@@ -17,6 +17,7 @@ module.exports = {
         'bluesuit': '#26233D',
         'grey': '#eeeff7',
         'treegreen': '#479552',
+        'yellowlight': '#ffc92b'
       }
     },
   },
