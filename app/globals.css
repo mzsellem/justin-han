@@ -2,3 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body {
+    height: 100%;
+}
+
+body {
+    background-image: url("/happy-justin.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+
+/* Media query for screens larger than 768 pixels */
+@media (min-width: 768px) {
+    body {
+        background-position: center right; /* Center the image horizontally and position it at the top vertically */
+    }
+}
