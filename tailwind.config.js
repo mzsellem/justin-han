@@ -19,6 +19,7 @@ module.exports = {
         'treegreen': '#479552',
         'darkgrey': '#6d7978',
         'yellowlight': '#ffc92b',
+        'darksuit': '#4c4a54',
       }
     },
   },
