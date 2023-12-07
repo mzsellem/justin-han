@@ -24,7 +24,7 @@ export default function Home() {
       <div className=" relative flex">
         <div className="fixed md:text-lg text-xs font-mono font-bold bg-bluesuit text-white z-10">
           <div className="flex justify-center w-screen h-16 md:space-x-10">
-            <button onClick={() => scrollToSectionWithOffset(section1Ref, 65)} className="hover:text-yellowlight p-2 m-2">Home</button>
+            <button onClick={() => scrollToSectionWithOffset(section1Ref, 80)} className="hover:text-yellowlight p-2 m-2">Home</button>
             <button onClick={() => scrollToSectionWithOffset(section2Ref, 65)} className="hover:text-yellowlight p-2 m-2">Bio</button>
             <button onClick={() => scrollToSectionWithOffset(section3Ref, 65)} className="hover:text-yellowlight p-2 m-2">Media</button>
             <button onClick={() => scrollToSectionWithOffset(section4Ref, 65)} className="hover:text-yellowlight p-2 m-2">Events</button>
