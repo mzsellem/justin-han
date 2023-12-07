@@ -2,6 +2,7 @@
 import React, { useRef } from "react";
 import Intro from "./intro/intro";
 import Bio from "./bio/bio";
+import PlaylistCard from "./media/media";
 
 export default function Home() {
   const section1Ref = useRef(null);
@@ -19,6 +20,21 @@ export default function Home() {
       });
     }
   };
+
+  const playlists = [
+    {
+      title: 'Mozart Concert',
+      videos: ['Insert Videos Here', 'here', 'here'],
+    },
+    {
+      title: 'Christmas Oratorio',
+      videos: ['Exploring City X', 'Adventure in Country Y', 'Foodie Paradise'],
+    },
+    {
+      title: 'Masters Piano Recital',
+      videos: ['Exploring City X', 'Adventure in Country Y', 'Foodie Paradise'],
+    },
+  ];
 
   return (
     <>
@@ -44,12 +60,19 @@ export default function Home() {
       </div>
 
       <div>
-        <div className="flex flex-col relative items-center bg-darksuit">
-          <div ref={section2Ref}>
+        <div className="flex flex-col relative items-center">
+          <div ref={section2Ref} className="bg-white">
             <Bio />
           </div>
-          <div ref={section3Ref} className="my-2 section bg-blue-400/50 md:bg-blue-400/25 rounded-3xl md:w-3/4">
-            {/* <Skills /> */}
+          <div ref={section3Ref} className="bg-white w-screen">
+          <div className="flex justify-center text-2xl p-6">Media</div>
+          <div className="flex justify-center items-center mb-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {playlists.map((playlist, index) => (
+                <PlaylistCard key={index} title={playlist.title} videos={playlist.videos} />
+              ))}
+            </div>
+          </div>
           </div>
           <div ref={section4Ref} className="my-2 section bg-blue-400/50 md:bg-blue-400/25 rounded-3xl md:w-3/4">
             {/* <About /> */}
