@@ -21,8 +21,8 @@ export default function Home() {
 
   return (
     <>
-      <div className="flex">
-        <div className="fixed md:text-lg text-xs font-mono font-bold bg-bluesuit text-white z-5">
+      <div className=" relative flex">
+        <div className="fixed md:text-lg text-xs font-mono font-bold bg-bluesuit text-white z-10">
           <div className="flex justify-center w-screen h-16 md:space-x-10">
             <button onClick={() => scrollToSectionWithOffset(section1Ref, 65)} className="hover:text-yellowlight p-2 m-2">Home</button>
             <button onClick={() => scrollToSectionWithOffset(section2Ref, 65)} className="hover:text-yellowlight p-2 m-2">Bio</button>
@@ -31,7 +31,11 @@ export default function Home() {
             <button onClick={() => scrollToSectionWithOffset(section5Ref, 65)} className="hover:text-yellowlight p-2 m-2">Contact</button>
           </div>
         </div>
-        <div className="flex justify-center w-screen h-screen overflow-hidden">
+
+        <div className="fixed inset-0 bg-cover bg-center" style={{ backgroundImage: 'url("justin-park.png")' }}>
+        </div>
+
+        <div className="flex justify-center w-screen h-screen">
           <div ref={section1Ref} className="absolute top-20 md:right-0 mt-6 md:mr-6">
             <Intro />
           </div>
