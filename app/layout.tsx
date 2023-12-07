@@ -17,6 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>{children}</body>
+      <footer className="flex justify-center bg-darkgrey text-white p-2">
+        Created by: MarsBars
+      </footer>
     </html>
   )
 }

@@ -23,8 +23,8 @@ export default function Home() {
   return (
     <>
       <div className="flex">
-        <div className="fixed md:text-lg text-xs font-mono font-bold bg-bluesuit text-white h-screen flex flex-col justify-center items-center">
-          <div className="flex flex-col space-y-8">
+        <div className="fixed md:text-lg text-xs font-mono font-bold bg-bluesuit text-white z-5">
+          <div className="flex space-y-8 justify-center w-screen">
             <button onClick={() => scrollToSectionWithOffset(section1Ref, 65)} className="hover:text-yellowlight p-2 m-2">Home</button>
             <button onClick={() => scrollToSectionWithOffset(section2Ref, 65)} className="hover:text-yellowlight p-2 m-2">Bio</button>
             <button onClick={() => scrollToSectionWithOffset(section3Ref, 65)} className="hover:text-yellowlight p-2 m-2">Media</button>
@@ -32,15 +32,15 @@ export default function Home() {
             <button onClick={() => scrollToSectionWithOffset(section5Ref, 65)} className="hover:text-yellowlight p-2 m-2">Contact</button>
           </div>
         </div>
-        <div className="flex justify-center w-screen h-screen overflow-hidden">
+        {/* <div className="flex justify-center w-screen h-screen overflow-hidden z-1">
           <div ref={section1Ref} className="absolute top-0 md:right-0 mt-6 md:mr-6">
             <Intro />
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div>
-        <div className="flex flex-col items-center m-6">
+        <div className="flex flex-col items-center m-6 z-1">
           <div ref={section2Ref} className="my-2 section bg-blue-400/50 md:bg-blue-400/25 rounded-3xl mt-52 md:mt-44 md:w-3/4">
             {/* <Projects /> */}
           </div>
@@ -55,10 +55,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
-      <footer className="flex justify-center bg-darkgrey text-white p-2">
-        Created by: MarsBars
-      </footer>
     </>
   );
 }
