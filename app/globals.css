@@ -7,15 +7,15 @@ html, body {
 }
 
 body {
-    background-image: url("/happy-justin.png");
+    background-image: url("/justin-park.png");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center left;
+    background-position: center;
 }
 
 /* Media query for screens larger than 768 pixels */
 @media (min-width: 768px) {
     body {
-        background-position: center right; /* Center the image horizontally and position it at the top vertically */
+        background-position: center; /* Center the image horizontally and position it at the top vertically */
     }
 }

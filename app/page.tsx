@@ -1,7 +1,6 @@
 'use client'
 import React, { useRef } from "react";
 import Intro from "./intro/intro";
-import NavBar from "./navbar/navbar";
 
 export default function Home() {
   const section1Ref = useRef(null);
@@ -24,7 +23,7 @@ export default function Home() {
     <>
       <div className="flex">
         <div className="fixed md:text-lg text-xs font-mono font-bold bg-bluesuit text-white z-5">
-          <div className="flex space-y-8 justify-center w-screen">
+          <div className="flex justify-center w-screen h-16 md:space-x-10">
             <button onClick={() => scrollToSectionWithOffset(section1Ref, 65)} className="hover:text-yellowlight p-2 m-2">Home</button>
             <button onClick={() => scrollToSectionWithOffset(section2Ref, 65)} className="hover:text-yellowlight p-2 m-2">Bio</button>
             <button onClick={() => scrollToSectionWithOffset(section3Ref, 65)} className="hover:text-yellowlight p-2 m-2">Media</button>
@@ -32,11 +31,11 @@ export default function Home() {
             <button onClick={() => scrollToSectionWithOffset(section5Ref, 65)} className="hover:text-yellowlight p-2 m-2">Contact</button>
           </div>
         </div>
-        {/* <div className="flex justify-center w-screen h-screen overflow-hidden z-1">
-          <div ref={section1Ref} className="absolute top-0 md:right-0 mt-6 md:mr-6">
+        <div className="flex justify-center w-screen h-screen overflow-hidden">
+          <div ref={section1Ref} className="absolute top-20 md:right-0 mt-6 md:mr-6">
             <Intro />
           </div>
-        </div> */}
+        </div>
       </div>
 
       <div>
