@@ -21,7 +21,7 @@ export default function Home() {
   const section4Ref = useRef(null);
   const section5Ref = useRef(null);
 
-  const scrollToSectionWithOffset = (ref, offset) => {
+  const scrollToSectionWithOffset = (ref: Object, offset: Number) => {
     if (ref.current) {
       const rect = ref.current.getBoundingClientRect();
       window.scrollTo({
