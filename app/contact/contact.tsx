@@ -39,7 +39,7 @@ export default function ContactForm() {
           <textarea
             id="message"
             name="message"
-            rows="4"
+            rows={4}
             className="mt-1 p-2 w-full border rounded-md"
             placeholder="Your Message"
           ></textarea>
