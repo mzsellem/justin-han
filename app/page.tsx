@@ -21,11 +21,13 @@ export default function Home() {
   const section4Ref = useRef(null);
   const section5Ref = useRef(null);
 
-  const scrollToSectionWithOffset = (ref: React.RefObject<HTMLElement>, offset: Number) => {
+  const scrollToSectionWithOffset = (ref: React.RefObject<HTMLElement>, offset: number | string) => {
     if (ref.current) {
       const rect = ref.current.getBoundingClientRect();
+      const numericOffset = Number(offset); // or parseFloat(offset)
+    
       window.scrollTo({
-        top: rect.top + window.scrollY - offset,
+        top: rect.top + window.scrollY - numericOffset,
         behavior: "smooth",
       });
     }
