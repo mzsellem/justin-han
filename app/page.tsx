@@ -3,6 +3,7 @@ import React, { useRef, useState, useEffect } from "react";
 import Intro from "./intro/intro";
 import Bio from "./bio/bio";
 import PlaylistCard from "./media/media";
+import Events from "./events/events";
 
 export default function Home() {
   const sectionRefs = {
@@ -48,6 +49,24 @@ export default function Home() {
     },
   ];
 
+  const tableData = [
+    {
+      date: '2023-01-01',
+      time: '12:00 PM',
+      location: 'Event Hall',
+      description: 'Lorem Ipsum',
+      link: 'https://example.com',
+    },
+    {
+      date: '2023-02-15',
+      time: '3:30 PM',
+      location: 'Conference Room',
+      description: 'Dolor Sit Amet',
+      link: 'https://example.com',
+    },
+    // Add more rows as needed
+  ];
+
   return (
     <>
       <div className="flex">
@@ -86,8 +105,8 @@ export default function Home() {
             </div>
           </div>
           </div>
-          <div ref={section4Ref} className="my-2 section bg-blue-400/50 md:bg-blue-400/25 rounded-3xl md:w-3/4">
-            {/* <About /> */}
+          <div ref={section4Ref}>
+            <Events data={tableData}/>
           </div>
           <div ref={section5Ref} className="flex justify-center my-2 text-center section bg-blue-400/50 md:bg-blue-400/25 rounded-3xl md:w-3/4">
             {/* <Contact /> */}
