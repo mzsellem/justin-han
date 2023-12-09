@@ -64,6 +64,34 @@ export default function Home() {
       description: 'Dolor Sit Amet',
       link: 'https://example.com',
     },
+    {
+      date: '2023-01-01',
+      time: '12:00 PM',
+      location: 'Event Hall',
+      description: 'Lorem Ipsum',
+      link: 'https://example.com',
+    },
+    {
+      date: '2023-02-15',
+      time: '3:30 PM',
+      location: 'Conference Room',
+      description: 'Dolor Sit Amet',
+      link: 'https://example.com',
+    },
+    {
+      date: '2023-01-01',
+      time: '12:00 PM',
+      location: 'Event Hall',
+      description: 'Lorem Ipsum',
+      link: 'https://example.com',
+    },
+    {
+      date: '2023-02-15',
+      time: '3:30 PM',
+      location: 'Conference Room',
+      description: 'Dolor Sit Amet',
+      link: 'https://example.com',
+    },
     // Add more rows as needed
   ];
 
@@ -96,7 +124,7 @@ export default function Home() {
             <Bio />
           </div>
           <div ref={section3Ref} className="bg-white w-screen">
-          <div className="flex justify-center text-2xl p-6">Media</div>
+          <div className="flex justify-center text-3xl p-6 font-bold">Media</div>
           <div className="flex justify-center items-center mb-6">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {playlists.map((playlist, index) => (
