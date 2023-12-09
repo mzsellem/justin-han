@@ -1,7 +1,12 @@
 // PlaylistCard.js
 import React from 'react';
 
-export default function PlaylistCard ({ title, videos }) {
+interface Props {
+title: String,
+videos: String[]
+}
+
+export default function PlaylistCard ({ title, videos}: Props) {
     return (
         <>
             <div className="max-w-xs mx-auto bg-darksuit shadow-lg rounded-lg overflow-hidden">

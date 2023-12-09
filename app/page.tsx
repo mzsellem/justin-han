@@ -1,10 +1,20 @@
 'use client'
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Intro from "./intro/intro";
 import Bio from "./bio/bio";
 import PlaylistCard from "./media/media";
 
 export default function Home() {
+  const sectionRefs = {
+    home: useRef(null),
+    bio: useRef(null),
+    media: useRef(null),
+    events: useRef(null),
+    contact: useRef(null),
+  };
+
+  const [activeSection, setActiveSection] = useState("home");
+
   const section1Ref = useRef(null);
   const section2Ref = useRef(null);
   const section3Ref = useRef(null);
