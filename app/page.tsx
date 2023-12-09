@@ -4,6 +4,7 @@ import Intro from "./intro/intro";
 import Bio from "./bio/bio";
 import PlaylistCard from "./media/media";
 import Events from "./events/events";
+import Contact from "./contact/contact";
 
 export default function Home() {
   const sectionRefs = {
@@ -137,7 +138,7 @@ export default function Home() {
             <Events data={tableData}/>
           </div>
           <div ref={section5Ref} className="flex justify-center my-2 text-center section bg-blue-400/50 md:bg-blue-400/25 rounded-3xl md:w-3/4">
-            {/* <Contact /> */}
+            <Contact />
           </div>
         </div>
       </div>
