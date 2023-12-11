@@ -144,7 +144,7 @@ export default function Home() {
       </div>
 
       <div>
-        <div className="flex flex-col relative items-center bg-white md:space-y-20 space-y-4 space">
+        <div className="flex flex-col relative items-center bg-white md:space-y-18 space-y-4 space">
           <div ref={section2Ref} className="bg-white">
             <Bio />
           </div>
@@ -161,7 +161,7 @@ export default function Home() {
           <div ref={section4Ref} className="h-screen">
             <Events data={tableData}/>
           </div>
-          <div ref={section5Ref} className="flex justify-center text-center md:h-3/4 md:pb-8">
+          <div ref={section5Ref} className="flex justify-center text-center md:h-3/4 md:pb-8 md:pt-8 pt-6">
             <Contact /> 
           </div>
         </div>
