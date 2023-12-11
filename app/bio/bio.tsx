@@ -6,13 +6,13 @@ export default function Bio() {
             <div className="md:w-1/3 w-2/3">
                 <img src="/conductor-justin.png" alt="Conductor Justin" />
             </div>
-                <div className="flex justify-center items-center text-sm p-8 md:w-1/3">
-                Justin is awesome. He plays the piano, the violin, he sings, he conducts, and he teaches. He started at UGA for a bachelor's degree, then went to Georgia State for TWO master's degrees. Again, he's awesome. He teach, piano, barbershop, and at church. He really good at music. Really REALLY good at music.
+            <div className="flex justify-center items-center text-sm p-6 md:w-1/3">
+                A native of both South Korea and Georgia, Mr. Justin Han is a professional pianist, conductor, singer, and violinist in the Atlanta area. Justin is a graduate of Georgia State University, where he earned a double Master’s degree in choral conducting and piano performance and was a recipient of the Robert Shaw Choral Scholar Award and Stegner Piano Scholarship.
 
-For church he create Mozart themed concert. It was dream for him. It was amazing!
+Before joining Emory Presbyterian Church in January 2020, Justin held music director and organist positions at Johns Creek Presbyterian Church, Commerce Presbyterian Church, Greensboro First United Methodist Church, and Our Hope Metropolitan Community Church. He also currently works as a piano instructor at Silva Piano Studios in Marietta, GA.
 
-He teach, piano, barbershop, and at church. He really good at music. Really REALLY good at music.
-                </div>
+When he isn’t doing music, Justin enjoys cooking international cuisines and playing with his two cats, Presto and Melody.
+            </div>
         </div>
     </>
     )
