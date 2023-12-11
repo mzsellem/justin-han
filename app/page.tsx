@@ -131,7 +131,6 @@ export default function Home() {
         </div>
 
         <div className="fixed inset-0 bg-cover bg-center" style={{ backgroundImage: 'url("justin-park.png")' }}>
-            <Footer />
         </div>
 
         <div className="flex justify-center w-screen h-screen">
@@ -162,6 +161,9 @@ export default function Home() {
           <div ref={section5Ref} className="flex justify-center text-center h-screen">
             <Contact /> 
           </div>
+        </div>
+        <div className="text-white">
+          <Footer />
         </div>
       </div>
     </>
