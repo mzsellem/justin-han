@@ -15,9 +15,9 @@ interface EventsTableProps {
 
 const EventsTable: React.FC<EventsTableProps> = ({ data = [] }) => {
   return (
-    <div className="bg-white h-screen flex flex-col items-center">
-      <div className="text-3xl text-center pt-4 pb-2 font-bold">Events</div>
-      <div className="overflow-x-auto">
+    <div className="bg-white h-screen flex flex-col items-center md:text-lg text-sm">
+      <div className="text-3xl text-center pt-4 pb-4 font-bold">Events</div>
+      <div className="overflow-x-auto w-screen">
         <table className="w-full sm:w-2/3 md:w-1/2 lg:w-2/3 xl:w-1/2 border border-collapse border-gray-300 mx-auto">
           <thead>
             <tr>

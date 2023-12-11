@@ -144,7 +144,7 @@ export default function Home() {
       </div>
 
       <div>
-        <div className="flex flex-col relative items-center bg-white space-y-10 space">
+        <div className="flex flex-col relative items-center bg-white md:space-y-32 space-y-4 space">
           <div ref={section2Ref} className="bg-white">
             <Bio />
           </div>
