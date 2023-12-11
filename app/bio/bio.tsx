@@ -1,7 +1,7 @@
 export default function Bio() {
     return (
     <>
-        <div className="flex flex-col md:flex-row justify-center items-center md:space-x-6 p-8">
+        <div className="flex flex-col md:flex-row justify-center items-center md:space-x-6 p-4">
             <div className="md:w-1/3 w-3/4">
                 <img src="/conductor-justin.png" alt="Conductor Justin" />
             </div>
