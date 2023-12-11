@@ -5,6 +5,7 @@ import Bio from "./bio/bio";
 import PlaylistCard from "./media/media";
 import Events from "./events/events";
 import Contact from "./contact/contact";
+import Footer from "./footer/footer"
 
 export default function Home() {
   const sectionRefs = {
@@ -42,7 +43,7 @@ export default function Home() {
     },
     {
       title: 'Christmas Oratorio',
-      videos: ['Exploring City X', 'Adventure in Country Y', 'Foodie Paradise'],
+      videos: ['Video', 'Video', 'Video'],
     },
     {
       title: 'Masters Piano Recital',
@@ -110,6 +111,7 @@ export default function Home() {
         </div>
 
         <div className="fixed inset-0 bg-cover bg-center" style={{ backgroundImage: 'url("justin-park.png")' }}>
+            <Footer />
         </div>
 
         <div className="flex justify-center w-screen h-screen">
@@ -120,7 +122,7 @@ export default function Home() {
       </div>
 
       <div>
-        <div className="flex flex-col relative items-center">
+        <div className="flex flex-col relative items-center mb-96">
           <div ref={section2Ref} className="bg-white">
             <Bio />
           </div>
@@ -137,8 +139,8 @@ export default function Home() {
           <div ref={section4Ref}>
             <Events data={tableData}/>
           </div>
-          <div ref={section5Ref} className="flex justify-center text-center">
-            <Contact />
+          <div ref={section5Ref} className="flex justify-center text-center mb-96">
+            <Contact /> 
           </div>
         </div>
       </div>
