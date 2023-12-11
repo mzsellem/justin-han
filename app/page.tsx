@@ -94,7 +94,27 @@ export default function Home() {
       description: 'Dolor Sit Amet',
       link: 'https://example.com',
     },
-    // Add more rows as needed
+    {
+      date: '2023-02-15',
+      time: '3:30 PM',
+      location: 'Conference Room',
+      description: 'Dolor Sit Amet',
+      link: 'https://example.com',
+    },
+    {
+      date: '2023-01-01',
+      time: '12:00 PM',
+      location: 'Event Hall',
+      description: 'Lorem Ipsum',
+      link: 'https://example.com',
+    },
+    {
+      date: '2023-02-15',
+      time: '3:30 PM',
+      location: 'Conference Room',
+      description: 'Dolor Sit Amet',
+      link: 'https://example.com',
+    },
   ];
 
   return (
@@ -122,7 +142,7 @@ export default function Home() {
       </div>
 
       <div>
-        <div className="flex flex-col relative items-center mb-96">
+        <div className="flex flex-col relative items-center bg-white space-y-10 space">
           <div ref={section2Ref} className="bg-white">
             <Bio />
           </div>
@@ -136,10 +156,10 @@ export default function Home() {
             </div>
           </div>
           </div>
-          <div ref={section4Ref}>
+          <div ref={section4Ref} className="h-screen">
             <Events data={tableData}/>
           </div>
-          <div ref={section5Ref} className="flex justify-center text-center mb-96">
+          <div ref={section5Ref} className="flex justify-center text-center h-screen">
             <Contact /> 
           </div>
         </div>
