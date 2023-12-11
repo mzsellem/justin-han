@@ -5,3 +5,10 @@
 .space {
     margin-bottom: 50%;
 }
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 600px) {
+    .space {
+        margin-bottom: 165%;
+    }
+}
