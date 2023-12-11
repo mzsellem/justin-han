@@ -161,7 +161,7 @@ export default function Home() {
           <div ref={section4Ref} className="h-screen">
             <Events data={tableData}/>
           </div>
-          <div ref={section5Ref} className="flex justify-center text-center md:h-3/4 md:pb-8 md:pt-8 pt-6">
+          <div ref={section5Ref} className="flex justify-center text-center md:h-3/4 md:pb-8 md:pt-8">
             <Contact /> 
           </div>
         </div>
