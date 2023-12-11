@@ -158,7 +158,7 @@ export default function Home() {
             </div>
           </div>
           </div>
-          <div ref={section4Ref} className="h-screen">
+          <div ref={section4Ref} className="h-screen md:w-screen">
             <Events data={tableData}/>
           </div>
           <div ref={section5Ref} className="flex justify-center text-center md:h-3/4 md:pb-8 md:pt-8 pt-6 p-4">
