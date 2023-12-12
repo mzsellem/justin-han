@@ -1,6 +1,10 @@
 import nodemailer from "nodemailer"
 
 export default async function ContactAPI (req: any, res: any) {
+    const emailUser = process.env.EMAIL_USER;
+    const emailPass = process.env.EMAIL_PASS;
+
+
     const { name, email, message } = req.body
 
     const data = {
@@ -12,14 +16,14 @@ export default async function ContactAPI (req: any, res: any) {
         port: 465,
         secure: true,
         auth: {
-            user: process.env.emailUser,
-            pass: process.env.emailPass,
+            user: emailUser,
+            pass: emailPass,
         }
     });
 
     try {
         const mailOptions = await transporter.sendMail({
-            from: process.env.emailUser, 
+            from: emailUser, 
             to: "mzsellem930@gmail.com",
             replyTo: email,
             subject: `Contact form submission from ${name}`,
