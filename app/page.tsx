@@ -5,7 +5,6 @@ import Bio from "./bio/bio";
 import PlaylistCard from "./media/media";
 import Events from "./events/events";
 import Contact from "./contact/contact";
-import Footer from "./footer/footer"
 
 export default function Home() {
   const sectionRefs = {
