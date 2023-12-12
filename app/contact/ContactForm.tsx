@@ -1,5 +1,7 @@
 'use client'
 
+import { error } from "console";
+
 export default function ContactForm() {
     async function handleSubmit(event: any) {
         event.preventDefault();
@@ -20,6 +22,7 @@ export default function ContactForm() {
 
         if (response.ok) {
             console.log("Message sent successfully")
+            return response
         }
         if(!response.ok) {
             console.log("Error sending message")
