@@ -18,8 +18,8 @@ export default async function ContactAPI (req: any, res: any) {
     });
 
     try {
-        const mail = await transporter.sendMail({
-            from: user, 
+        const mailOptions = await transporter.sendMail({
+            from: process.env.emailUser, 
             to: "mzsellem930@gmail.com",
             replyTo: email,
             subject: `Contact form submission from ${name}`,
