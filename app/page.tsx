@@ -38,15 +38,15 @@ export default function Home() {
   const playlists = [
     {
       title: 'Mozart Concert',
-      videos: ['Insert Videos Here', 'here', 'here'],
+      videos: ['BdFr9vdz-SU?si=TgCx4yOsMtFuu3P_', 'KhW5EthdSXI?si=BLEcNyyXjt9_pIaD', 'KhW5EthdSXI?si=9zxynfY7_IsZwxD3', 'iJGEvFzBs-Y?si=txqtNvy9W8gCY1xG', 'AqWB2iNaoLA?si=aoGHiIWvrs1rQ4F9', '5bvLJ1gKjxI?si=v2n3Y7irC3luZCtU', 'd1wpzCKHd74?si=nXvFjvo5B4lW0pPq', 'j-GxKTKnGck?si=oMqDmufEsAQ9ACiB'],
     },
     {
       title: 'Christmas Oratorio',
-      videos: ['Video', 'Video', 'Video'],
+      videos: ['RDmY90Xs3NQ?si=RS4aYVL1K0bVJG7c', 'darXK32zReE?si=iJFFqSrBbfCPb3Xt', 'nr47uLHQ1l4?si=OqLTY1pRgbp3RumC', 'Yfo62UQXoBo?si=akhkC7Mc52Mn32Uv', 'X6Q3IuyZrLM?si=h5J4wCCRZFNhH90G', 'V-zFfk5t1mQ?si=FqigWz-wl5eVcDIJ', 'A4B4GWGU0Ww?si=OM6T6J533yfMEBeW', 'H1XxkI3glHM?si=9D8Q2hcj7lRsGHIK', '8JnW7Z1lf1I?si=ItTcDQQln90eHyDU', 'p07Y3uEE1nw?si=vpfrTKgnZQv6Cj_0'],
     },
     {
       title: 'Masters Piano Recital',
-      videos: ['Exploring City X', 'Adventure in Country Y', 'Foodie Paradise'],
+      videos: ['-4XrN1x2iT4?si=ESDH-2ET_K8InUV-', '01u5_H65U7o?si=DgIRJ4OE6NUYe7Cy', 'EiwW3a_pjXU?si=HOOVBZrmJE0EAkx6', 'XZsKrMpgdRw?si=uYFZIZnTEgoRytxy', 'XZsKrMpgdRw?si=uYFZIZnTEgoRytxy', 'hK6dzVJe6oM?si=I_aD37k5336afZ_X', 'pOj4zM6Qt-g?si=7XkUCjy06-lhZeJ_'],
     },
   ];
 
