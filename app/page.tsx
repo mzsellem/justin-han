@@ -149,7 +149,7 @@ export default function Home() {
           </div>
           <div ref={section3Ref} className="bg-white w-screen">
           <div className="flex justify-center text-3xl p-6 font-bold">Media</div>
-          <div className="flex justify-center items-center mb-6">
+          <div className="flex justify-center items-center mb-6 p-6">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {playlists.map((playlist, index) => (
                 <PlaylistCard key={index} title={playlist.title} videos={playlist.videos} />
