@@ -15,10 +15,10 @@ interface EventsTableProps {
 
 const EventsTable: React.FC<EventsTableProps> = ({ data = [] }) => {
   return (
-    <div className="bg-white h-screen flex flex-col items-center md:text-lg text-sm p-4 md:p-8">
-      <div className="text-3xl text-center pt-4 pb-4 font-bold">Events</div>
+    <div className="bg-white h-screen flex flex-col items-center md:text-lg text-sm p-4 md:p-6">
+      <div className="text-3xl text-center pb-4 font-bold font-pro">Events</div>
       <div className="overflow-x-auto w-full">
-        <table className="sm:w-2/3 md:w-1/2 lg:w-2/3 xl:w-1/2 border border-collapse border-gray-300 mx-auto">
+        <table className="sm:w-2/3 md:w-1/2 lg:w-2/3 xl:w-1/2 border border-collapse border-gray-300 mx-auto font-pro text-center">
           <thead>
             <tr>
               <th className="border-b p-2 sm:p-3">Date</th>

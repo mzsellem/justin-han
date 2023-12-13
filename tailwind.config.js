@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        mono: ['Cutive Mono', 'monospace'],
+        pro: ['Crimson Pro', 'serif'],
       },
       colors: {
         'bluesuit': '#26233D',

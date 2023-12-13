@@ -31,9 +31,9 @@ export default function ContactForm() {
 
     return(
         <>
-            <form onSubmit={handleSubmit} className="max-w-md mx-auto p-4">
+            <form onSubmit={handleSubmit} className="max-w-md mx-auto p-4 font-pro">
                 <div className="mb-4">
-                <label htmlFor="name" className="block text-sm font-medium">
+                <label htmlFor="name" className="block text-md font-medium">
                     Name
                 </label>
                 <input
@@ -46,7 +46,7 @@ export default function ContactForm() {
                 />
                 </div>
                 <div className="mb-4">
-                <label htmlFor="email" className="block text-sm font-medium">
+                <label htmlFor="email" className="block text-md font-medium">
                     Email
                 </label>
                 <input
@@ -59,7 +59,7 @@ export default function ContactForm() {
                 />
                 </div>
                 <div className="mb-4">
-                <label htmlFor="message" className="block text-sm font-medium">
+                <label htmlFor="message" className="block text-md font-medium">
                     Message
                 </label>
                 <textarea

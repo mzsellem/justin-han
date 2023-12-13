@@ -119,7 +119,7 @@ export default function Home() {
   return (
     <>
       <div className="flex">
-        <div className="fixed md:text-lg text-xs font-mono font-bold bg-bluesuit text-white z-10">
+        <div className="fixed md:text-lg text-xs font-pro font-bold bg-bluesuit text-white z-10">
           <div className="flex justify-center w-screen h-16 md:space-x-10">
             <button onClick={() => scrollToSectionWithOffset(section1Ref, 80)} className="hover:text-yellowlight p-2 m-2">Home</button>
             <button onClick={() => scrollToSectionWithOffset(section2Ref, 60)} className="hover:text-yellowlight p-2 m-2">Bio</button>
@@ -148,7 +148,7 @@ export default function Home() {
             <Bio />
           </div>
           <div ref={section3Ref} className="bg-white w-screen">
-          <div className="flex justify-center text-3xl p-6 font-bold">Media</div>
+          <div className="flex justify-center text-3xl mt-6 font-bold font-pro">Media</div>
           <div className="flex justify-center items-center mb-6 p-6">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {playlists.map((playlist, index) => (
