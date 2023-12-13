@@ -40,6 +40,7 @@ export default function ContactForm() {
                     type="text"
                     id="name"
                     required
+                    autoComplete="off"
                     name="name"
                     className="mt-1 p-2 w-full border rounded-md"
                     placeholder="Your Name"
@@ -53,6 +54,7 @@ export default function ContactForm() {
                     type="email"
                     id="email"
                     required
+                    autoComplete="false"
                     name="email"
                     className="mt-1 p-2 w-full border rounded-md"
                     placeholder="Your Email"
@@ -68,6 +70,7 @@ export default function ContactForm() {
                     minLength={5}
                     maxLength={150}
                     required
+                    autoComplete="false"
                     rows={4}
                     className="mt-1 p-2 w-full border rounded-md"
                     placeholder="Your Message"

@@ -131,7 +131,7 @@ export default function Home() {
 
         <div className="flex">
           <div className="flex flex-col justify-end z-8 fixed inset-0 bg-cover bg-center" style={{ backgroundImage: 'url("justin-park.png")' }}>
-            <div className="bg-bluesuit text-white p-2 flex justify-center text-md">Updated: December 2023</div>
+            <div className="bg-bluesuit text-white font-pro p-2 flex justify-center text-md">Updated: December 2023</div>
           </div>
         </div>
 
