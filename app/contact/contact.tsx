@@ -5,10 +5,10 @@ import ContactForm from './ContactForm';
 export default function Contact() {
 
   return (
-    <div className="mx-auto bg-yellowlight rounded-lg p-8 mb-8 md:mb-0">
-      <h1 className="text-xl font-bold font-pro mt-4 mb-4">
+    <div className="p-8 mx-auto mb-8 rounded-lg bg-yellowlight md:mb-0">
+      <h1 className="mt-4 mb-4 text-xl font-bold font-pro">
         Want me to perform at your next event? </h1>
-        <h1 className="text-xl font-bold font-pro mt-4 mb-4">Send me an email.</h1>
+        <h1 className="mt-4 mb-4 text-xl font-bold font-pro">Send me an email.</h1>
         <ContactForm />
     </div>
   );

@@ -1,17 +1,20 @@
 import nodemailer from "nodemailer"
 
-export default async function ContactAPI (req: any, res: any) {
+export async function POST (req: any, res: any) {    
     const emailUser = process.env.EMAIL_USER;
     const emailPass = process.env.EMAIL_PASS;
-
+    console.log("hellp")
 
     const { name, email, message } = req.body
-
+    
     const data = {
         name, email, message
     }
+    console.log(data, "marley")
+    console.log(req, "req")
 
     const transporter = nodemailer.createTransport({
+        service: 'gmail',
         host: "smtp.gmail.com",
         port: 465,
         secure: true,
@@ -22,21 +25,23 @@ export default async function ContactAPI (req: any, res: any) {
     });
 
     try {
-        const mailOptions = await transporter.sendMail({
+        const mailOptions = {
             from: emailUser, 
-            to: "marleysellem@gmail.com",
-            replyTo: email,
-            subject: `Contact form submission from ${name}`,
+            to: emailUser,
+            subject: `Contact form submission from ${data.name}`,
             html:`
-            <p>Name: ${name}</p>
-            <p>Email: ${email}</p>
-            <p>Message: ${message}</p>
+            <p>Name: ${data.name}</p>
+            <p>Email: ${data.email}</p>
+            <p>Message: ${data.message}</p>
             `,
-        });
+        };
+
+        console.log("hello")
+        await transporter.sendMail(mailOptions)
 
         return res.status(200).json({ message: "success" })
     } catch (error) {
         console.log(error)
-        res.status(500).json({message: "Could not send the email. Your message was not sent."})
+        return res.status(500).json({message: "Could not send the email. Your message was not sent."})
     }
 }

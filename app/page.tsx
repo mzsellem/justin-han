@@ -2,7 +2,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import Intro from "./intro/intro";
 import Bio from "./bio/bio";
-import PlaylistCard from "./media/media";
+import MediaCard from "./media/media";
 import Events from "./events/events";
 import Contact from "./contact/contact";
 
@@ -119,48 +119,48 @@ export default function Home() {
   return (
     <>
       <div className="flex">
-        <div className="fixed md:text-lg text-xs font-pro font-bold bg-bluesuit text-white z-10">
+        <div className="fixed z-10 text-xs font-bold text-white md:text-lg font-pro bg-bluesuit">
           <div className="flex justify-center w-screen h-16 md:space-x-10">
-            <button onClick={() => scrollToSectionWithOffset(section1Ref, 80)} className="hover:text-yellowlight p-2 m-2">Home</button>
-            <button onClick={() => scrollToSectionWithOffset(section2Ref, 60)} className="hover:text-yellowlight p-2 m-2">Bio</button>
-            <button onClick={() => scrollToSectionWithOffset(section3Ref, 65)} className="hover:text-yellowlight p-2 m-2">Media</button>
-            <button onClick={() => scrollToSectionWithOffset(section4Ref, 65)} className="hover:text-yellowlight p-2 m-2">Events</button>
-            <button onClick={() => scrollToSectionWithOffset(section5Ref, 65)} className="hover:text-yellowlight p-2 m-2">Contact</button>
+            <button onClick={() => scrollToSectionWithOffset(section1Ref, 80)} className="p-2 m-2 hover:text-yellowlight">Home</button>
+            <button onClick={() => scrollToSectionWithOffset(section2Ref, 60)} className="p-2 m-2 hover:text-yellowlight">Bio</button>
+            <button onClick={() => scrollToSectionWithOffset(section3Ref, 65)} className="p-2 m-2 hover:text-yellowlight">Media</button>
+            <button onClick={() => scrollToSectionWithOffset(section4Ref, 65)} className="p-2 m-2 hover:text-yellowlight">Events</button>
+            <button onClick={() => scrollToSectionWithOffset(section5Ref, 65)} className="p-2 m-2 hover:text-yellowlight">Contact</button>
           </div>
         </div>
 
         <div className="flex">
-          <div className="flex flex-col justify-end z-8 fixed inset-0 bg-cover bg-center" style={{ backgroundImage: 'url("justin-park.png")' }}>
-            <div className="bg-bluesuit text-white font-pro p-2 flex justify-center text-md">Updated: December 2023</div>
+          <div className="fixed inset-0 flex flex-col justify-end bg-center bg-cover z-8" style={{ backgroundImage: 'url("justin-park.png")' }}>
+            <div className="flex justify-center p-2 text-white bg-bluesuit font-pro text-md">Updated: December 2023</div>
           </div>
         </div>
 
         <div className="flex justify-center w-screen h-screen">
-          <div ref={section1Ref} className="absolute top-20 md:right-0 mt-6 md:mr-6">
+          <div ref={section1Ref} className="absolute mt-6 top-20 md:right-0 md:mr-6">
             <Intro />
           </div>
         </div>
       </div>
 
       <div>
-        <div className="flex flex-col relative items-center bg-white md:space-y-18 space-y-4 space">
+        <div className="relative flex flex-col items-center space-y-4 bg-white md:space-y-18 space">
           <div ref={section2Ref} className="bg-white">
             <Bio />
           </div>
-          <div ref={section3Ref} className="bg-white w-screen">
-          <div className="flex justify-center text-3xl mt-6 font-bold font-pro">Media</div>
-          <div className="flex justify-center items-center mb-6 p-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div ref={section3Ref} className="w-screen bg-white">
+          <div className="flex justify-center mt-6 text-3xl font-bold font-pro">Media</div>
+          <div className="flex items-center justify-center p-6 mb-6">
+            {/* <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
               {playlists.map((playlist, index) => (
-                <PlaylistCard key={index} title={playlist.title} videos={playlist.videos} />
+                <MediaCard key={index} title={playlist.title} videos={playlist.videos} />
               ))}
-            </div>
+            </div> */}
           </div>
           </div>
           <div ref={section4Ref} className="h-screen md:w-screen">
-            <Events data={tableData}/>
+            {/* <Events data={tableData}/> */}
           </div>
-          <div ref={section5Ref} className="flex justify-center text-center md:h-3/4 md:pb-8 md:pt-8 pt-6 p-4">
+          <div ref={section5Ref} className="flex justify-center p-4 pt-6 text-center md:h-3/4 md:pb-8 md:pt-8">
             <Contact /> 
           </div>
         </div>

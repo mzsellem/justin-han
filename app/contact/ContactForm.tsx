@@ -1,20 +1,18 @@
 'use client'
 
-import { error } from "console";
-
 export default function ContactForm() {
     async function handleSubmit(event: any) {
+        console.log('submitting')
         event.preventDefault();
         const data = {
             name: String(event.target.name.value),
             email: String(event.target.email.value),
             message: String(event.target.message.value)
         };
-    
-        const response = await fetch ('/api/contact', {
+        const response = await fetch (`/pages/api/sendEmail`, {
             method: "POST",
             headers: {
-                "Content-Type": "application/json",
+                "content-type": "application/json",
             },
             body: JSON.stringify(data),
         })
@@ -25,29 +23,30 @@ export default function ContactForm() {
             return response
         }
         if(!response.ok) {
+            console.log({response})
             console.log("Error sending message")
         }
     }
 
     return(
         <>
-            <form onSubmit={handleSubmit} className="max-w-md mx-auto p-4 font-pro">
+            <form onSubmit={handleSubmit} className="max-w-md p-4 mx-auto font-pro">
                 <div className="mb-4">
-                <label htmlFor="name" className="block text-md font-medium">
+                <label htmlFor="name" className="block font-medium text-md">
                     Name
                 </label>
                 <input
                     type="text"
                     id="name"
                     required
-                    autoComplete="off"
+                    autoComplete="false"
                     name="name"
-                    className="mt-1 p-2 w-full border rounded-md"
+                    className="w-full p-2 mt-1 border rounded-md"
                     placeholder="Your Name"
                 />
                 </div>
                 <div className="mb-4">
-                <label htmlFor="email" className="block text-md font-medium">
+                <label htmlFor="email" className="block font-medium text-md">
                     Email
                 </label>
                 <input
@@ -56,12 +55,12 @@ export default function ContactForm() {
                     required
                     autoComplete="false"
                     name="email"
-                    className="mt-1 p-2 w-full border rounded-md"
+                    className="w-full p-2 mt-1 border rounded-md"
                     placeholder="Your Email"
                 />
                 </div>
                 <div className="mb-4">
-                <label htmlFor="message" className="block text-md font-medium">
+                <label htmlFor="message" className="block font-medium text-md">
                     Message
                 </label>
                 <textarea
@@ -72,13 +71,13 @@ export default function ContactForm() {
                     required
                     autoComplete="false"
                     rows={4}
-                    className="mt-1 p-2 w-full border rounded-md"
+                    className="w-full p-2 mt-1 border rounded-md"
                     placeholder="Your Message"
                 ></textarea>
                 </div>
                 <button
                 type="submit"
-                className="bg-bluesuit text-white p-2 rounded-md"
+                className="p-2 text-white rounded-md bg-bluesuit"
                 >
                 Send Message
                 </button>

@@ -7,7 +7,7 @@ title: String,
 videos: String[]
 }
 
-export default function PlaylistCard ({ title, videos}: Props) {
+export default function MediaCard ({ title, videos}: Props) {
     return (
         <>
             <div className="pl-6 pr-6">
