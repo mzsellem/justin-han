@@ -5,18 +5,20 @@ export default function ContactForm() {
         console.log('submitting')
         event.preventDefault();
         const data = {
-            name: String(event.target.name.value),
-            email: String(event.target.email.value),
-            message: String(event.target.message.value)
+            name: event.target[0].value,
+            email: event.target[1].value,
+            message: event.target[2].value,
         };
+        console.log(JSON.stringify(data))
         const response = await fetch (`/pages/api/sendEmail`, {
             method: "POST",
             headers: {
-                "content-type": "application/json",
+                "Content-Type": "application/json",
             },
+            mode: "cors",
             body: JSON.stringify(data),
         })
-    
+    console.log(response, "raja")
 
         if (response.ok) {
             console.log("Message sent successfully")
