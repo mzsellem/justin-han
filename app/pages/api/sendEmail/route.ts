@@ -1,47 +1,25 @@
-import nodemailer from "nodemailer"
+// pages/api/sendEmail.js
+import transporter from '../../../../nodemailer'; // Update the path accordingly
 
-export async function POST (req: any, res: any) {    
-    const emailUser = process.env.EMAIL_USER;
-    const emailPass = process.env.EMAIL_PASS;
-    console.log("hellp")
-
-    const { name, email, message } = req.body
-    
-    const data = {
-        name, email, message
-    }
-    console.log(data, "marley")
-    console.log(req, "req")
-
-    const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        host: "smtp.gmail.com",
-        port: 465,
-        secure: true,
-        auth: {
-            user: emailUser,
-            pass: emailPass,
-        }
-    });
+export default async function handler(req:any, res:any) {
+  if (req.method === 'POST') {
+    const { name, email, message } = req.body;
 
     try {
-        const mailOptions = {
-            from: emailUser, 
-            to: emailUser,
-            subject: `Contact form submission from ${data.name}`,
-            html:`
-            <p>Name: ${data.name}</p>
-            <p>Email: ${data.email}</p>
-            <p>Message: ${data.message}</p>
-            `,
-        };
+      const info = await transporter.sendMail({
+        from: email,
+        to: 'your-email@gmail.com',
+        subject: 'Contact Form Submission',
+        text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+      });
 
-        console.log("hello")
-        await transporter.sendMail(mailOptions)
-
-        return res.status(200).json({ message: "success" })
+      console.log('Email sent:', info.response);
+      res.status(200).json({ success: true });
     } catch (error) {
-        console.log(error)
-        return res.status(500).json({message: "Could not send the email. Your message was not sent."})
+      console.error('Error sending email:', error);
+      res.status(500).json({ success: false, error: 'Internal Server Error' });
     }
+  } else {
+    res.status(405).json({ success: false, error: 'Method Not Allowed' });
+  }
 }
