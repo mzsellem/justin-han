@@ -2,13 +2,14 @@
 import transporter from '../../../../nodemailer'; // Update the path accordingly
 
 export default async function handler(req:any, res:any) {
+    console.log("hello")
   if (req.method === 'POST') {
     const { name, email, message } = req.body;
 
     try {
       const info = await transporter.sendMail({
         from: email,
-        to: 'your-email@gmail.com',
+        to: email,
         subject: 'Contact Form Submission',
         text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
       });
