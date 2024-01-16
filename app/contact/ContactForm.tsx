@@ -14,7 +14,7 @@ const ContactForm = () => {
     email: '',
     message: '',
     });
-    console.log(formData, "formData")
+    console.log(formData, "formData in contactForm")
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -24,7 +24,7 @@ const ContactForm = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('/api/sendEmail', {
+      const response = await fetch('/pages/api/sendEmail', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -53,6 +53,7 @@ const ContactForm = () => {
                     Name
                 </label>
                 <input
+                    onChange={handleChange}
                     type="text"
                     id="name"
                     required
@@ -67,6 +68,7 @@ const ContactForm = () => {
                     Email
                 </label>
                 <input
+                    onChange={handleChange}
                     type="email"
                     id="email"
                     required
@@ -81,6 +83,7 @@ const ContactForm = () => {
                     Message
                 </label>
                 <textarea
+                    onChange={handleChange}
                     id="message"
                     name="message"
                     minLength={5}

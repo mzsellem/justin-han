@@ -1,26 +1,44 @@
-// pages/api/sendEmail.js
-import transporter from '../../../../nodemailer'; // Update the path accordingly
+import nodemailer from "nodemailer"
 
-export default async function handler(req:any, res:any) {
-    console.log("hello")
-  if (req.method === 'POST') {
-    const { name, email, message } = req.body;
+export async function POST (req: any, res: any) {   
+    const dataInBody = await req.json();
+    console.log(dataInBody, "req hit in POST")
+
+    const emailUser = process.env.EMAIL_USER;
+    const emailPass = process.env.EMAIL_PASS;
+    console.log("POST hit")
+
+    const { name, email, message } = dataInBody
+
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        host: "smtp.gmail.com",
+        port: 465,
+        secure: true,
+        auth: {
+            user: emailUser,
+            pass: emailPass,
+        }
+    });
 
     try {
-      const info = await transporter.sendMail({
-        from: email,
-        to: email,
-        subject: 'Contact Form Submission',
-        text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
-      });
+        const mailOptions = {
+            from: emailUser, 
+            to: emailUser,
+            subject: `Contact form submission from ${name}`,
+            html:`
+            <p>Name: ${name}</p>
+            <p>Email: ${email}</p>
+            <p>Message: ${message}</p>
+            `,
+        };
 
-      console.log('Email sent:', info.response);
-      res.status(200).json({ success: true });
+        console.log("mailOptions hit")
+        await transporter.sendMail(mailOptions)
+
+        return res.status(200).json({ message: "success" })
     } catch (error) {
-      console.error('Error sending email:', error);
-      res.status(500).json({ success: false, error: 'Internal Server Error' });
+        console.log(error)
+        return res.status(500).json({message: "Could not send the email. Your message was not sent."})
     }
-  } else {
-    res.status(405).json({ success: false, error: 'Method Not Allowed' });
-  }
 }
