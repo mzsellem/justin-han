@@ -1,44 +1,58 @@
-import React, { memo } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { useState } from "react";
+import {
+  BsFillArrowRightCircleFill,
+  BsFillArrowLeftCircleFill,
+} from "react-icons/bs";
+export default function Carousel({ videos }: any) {
+  let [current, setCurrent] = useState(0);
 
-interface Props {
-  videos: String[];
-}
+  let previousSlide = () => {
+    if (current === 0) setCurrent(videos.length - 1);
+    else setCurrent(current - 1);
+  };
 
-const VideoComponent = memo(({ videos }: Props) => (
-  <div>
-    {videos.map((video, index) => (
-      <div key={index}>
-        <iframe
-          width="100%"
-          height="315"
-          src={`https://www.youtube.com/embed/${video}`}
-          title={`Video ${index + 1}`}
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
-      </div>
-    ))}
-  </div>
-));
-
-const VideoCarousel = memo(({ videos }: Props) => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
+  let nextSlide = () => {
+    if (current === videos.length - 1) setCurrent(0);
+    else setCurrent(current + 1);
   };
 
   return (
-    <Slider {...settings}>
-      <VideoComponent videos={videos} />
-    </Slider>
-  );
-});
+    <div className="relative overflow-hidden">
+      <div
+        className={`flex transition ease-out duration-40`}
+        style={{
+          transform: `translateX(-${current * 100}%)`,
+        }}
+      >
+        {videos.map((v: any, i: any) => {
+          return <img src={v} key={i} />;
+        })}
+      </div>
 
-export default VideoCarousel;
+      <div className="absolute top-0 flex items-center justify-between w-full h-full px-10 text-3xl text-white">
+        <button onClick={previousSlide}>
+          <BsFillArrowLeftCircleFill />
+        </button>
+        <button onClick={nextSlide}>
+          <BsFillArrowRightCircleFill />
+        </button>
+      </div>
+
+      <div className="absolute bottom-0 flex justify-center w-full gap-3 py-4">
+        {videos.map((v: any, i: any) => {
+          return (
+            <div
+              onClick={() => {
+                setCurrent(i);
+              }}
+              key={"circle" + i}
+              className={`rounded-full w-5 h-5 cursor-pointer  ${
+                i == current ? "bg-white" : "bg-gray-500"
+              }`}
+            ></div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
