@@ -2,11 +2,11 @@ import nodemailer from "nodemailer"
 
 export async function POST (req: any, res: any) {   
     const dataInBody = await req.json();
-    // console.log(dataInBody, "req hit in POST")
+    console.log(dataInBody, "req hit in POST")
 
     const emailUser = process.env.EMAIL_USER;
     const emailPass = process.env.EMAIL_PASS;
-    // console.log("POST hit")
+    console.log("POST hit")
 
     const { name, email, message } = dataInBody
 
@@ -33,7 +33,7 @@ export async function POST (req: any, res: any) {
             `,
         };
 
-        // console.log("mailOptions hit")
+        console.log("mailOptions hit")
         await transporter.sendMail(mailOptions)
 
         return res.status(200).json({ message: "success" })
