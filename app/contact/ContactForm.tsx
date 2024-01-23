@@ -14,7 +14,7 @@ const ContactForm = () => {
     email: '',
     message: '',
     });
-    console.log(formData, "formData in contactForm")
+    // console.log(formData, "formData in contactForm")
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
