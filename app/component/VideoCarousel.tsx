@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import Slider from "react-slick";
+import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import YouTube from "react-youtube";
@@ -34,8 +34,9 @@ const Videos = memo(({ videos }: Props) => (
 ));
 
 const VideoCarousel = memo(({ videos }: Props) => {
-  const settings = {
+  const settings: Settings = {
     dots: true,
+    lazyLoad: "ondemand",
     infinite: true,
     speed: 500,
     slidesToShow: 1,
