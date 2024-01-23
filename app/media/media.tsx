@@ -3,15 +3,15 @@ import React from 'react';
 import VideoCarousel from "../component/VideoCarousel";
 
 interface Props {
-title: String,
-videos: String[]
+title: string,
+videos: string[],
 }
 
 export default function MediaCard ({ title, videos}: Props) {
     return (
         <>
             <div className="pl-6 pr-6">
-                <h3 className="text-center text-xl font-bold font-pro mb-2">{title}</h3>
+                <h3 className="mb-2 text-xl font-bold text-center font-pro">{title}</h3>
                 <VideoCarousel videos={videos} />
             </div>
         </>
