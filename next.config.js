@@ -1,21 +1,5 @@
 /** @type {import('next').NextConfig} */
-// next.config.js
-import "./middleware/csp.js";
 
-const nextConfig = {
-    async headers() {
-        return [
-          {
-            source: '/(.*)',
-            headers: [
-              {
-                key: 'Content-Security-Policy',
-                value: csp.toString(),
-              },
-            ],
-          },
-        ];
-      },
-}
+const nextConfig = {}
 
 module.exports = nextConfig
