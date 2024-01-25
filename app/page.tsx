@@ -36,6 +36,10 @@ export default function Home() {
   };
 
   const playlists = [
+    // {
+    //   title: '2024 International Conducting Workshop and Festival',
+    //   videos: ['15FhxsmcZq8?si=Cbr2F6ozzbQrwA5o', 'DK-me5451L8?si=CK0dXu_J4pcpTfBc', 'G7_tw8IDNoE?si=EZXKcVEJTEkZi47f', 'VMAB9UztppU?si=sOfOLc7pUG_nOtxM'],
+    // },
     {
       title: 'Mozart Concert',
       videos: ['BdFr9vdz-SU?si=TgCx4yOsMtFuu3P_', 'KhW5EthdSXI?si=BLEcNyyXjt9_pIaD', 'KhW5EthdSXI?si=9zxynfY7_IsZwxD3', 'iJGEvFzBs-Y?si=txqtNvy9W8gCY1xG', 'AqWB2iNaoLA?si=aoGHiIWvrs1rQ4F9', '5bvLJ1gKjxI?si=v2n3Y7irC3luZCtU', 'd1wpzCKHd74?si=nXvFjvo5B4lW0pPq', 'j-GxKTKnGck?si=oMqDmufEsAQ9ACiB'],
@@ -131,7 +135,7 @@ export default function Home() {
 
         <div className="flex">
           <div className="fixed inset-0 flex flex-col justify-end bg-center bg-cover z-8" style={{ backgroundImage: 'url("justin-park.png")' }}>
-            <div className="flex justify-center p-2 text-white bg-bluesuit font-pro text-md">Updated: December 2023</div>
+            <div className="flex justify-center p-2 text-white bg-bluesuit font-pro text-md">Updated: January 2024</div>
           </div>
         </div>
 
@@ -149,8 +153,8 @@ export default function Home() {
           </div>
           <div ref={section3Ref} className="w-screen bg-white">
           <div className="flex justify-center mt-6 text-3xl font-bold font-pro">Media</div>
-          <div className="flex items-center justify-center p-6 mb-6">
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div className="flex justify-center w-5/6 p-6 mx-auto mb-6 border">
+            <div className="flex flex-col w-full border">
               {playlists.map((playlist, index) => (
                 <MediaCard key={index} title={playlist.title} videos={playlist.videos} />
               ))}

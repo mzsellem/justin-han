@@ -10,8 +10,8 @@ videos: string[],
 export default function MediaCard ({ title, videos}: Props) {
     return (
         <>
-            <div className="pl-6 pr-6">
-                <h3 className="mb-2 text-xl font-bold text-center font-pro">{title}</h3>
+            <div className="flex flex-col">
+                <h3 className="flex justify-center mt-6 mb-4 text-xl font-bold text-center font-pro">{title}</h3>
                 <VideoCarousel videos={videos} />
             </div>
         </>

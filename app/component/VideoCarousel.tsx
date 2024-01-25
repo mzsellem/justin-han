@@ -9,9 +9,9 @@ interface Props {
 }
 
 const Videos = memo(({ videos }: Props) => (
-  <div>
+  <div className="flex p-6 space-x-40 overflow-x-auto sm:space-x-6">
     {videos.map((video, index) => (
-      <div key={index}>
+      <div key={index} className="relative w-full aspect-w-16 aspect-h-9">
         {/* <iframe
           width="100%"
           height="315"
@@ -21,9 +21,11 @@ const Videos = memo(({ videos }: Props) => (
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         ></iframe> */}
-        <YouTube videoId={video} opts={{
-          height: "100%",
-          width: "315",
+        <YouTube 
+          videoId={video} 
+          opts={{
+          height: "250",
+          width: "350",
           playerVars: {autoplay: 1,},
           title: `${index + 1}`
           }} 
@@ -41,6 +43,22 @@ const VideoCarousel = memo(({ videos }: Props) => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    // responsive: [
+    //   {
+    //     breakpoint: 640, // Adjust breakpoints based on your design needs
+    //     settings: {
+    //       slidesToShow: 1,
+    //       slidesToScroll: 1,
+    //     },
+    //   },
+    //   {
+    //     breakpoint: 768,
+    //     settings: {
+    //       slidesToShow: 2,
+    //       slidesToScroll: 2,
+    //     },
+    //   },
+    // ]
   };
 
   return (
