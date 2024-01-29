@@ -125,7 +125,7 @@ export default function Home() {
       <div className="flex">
         <div className="fixed z-10 text-xs font-bold text-white md:text-lg font-pro bg-bluesuit">
           <div className="flex justify-center w-screen h-16 md:space-x-10">
-            <button onClick={() => scrollToSectionWithOffset(section1Ref, 80)} className="p-2 m-2 hover:text-yellowlight">Home</button>
+            <button onClick={() => scrollToSectionWithOffset(section1Ref, 100)} className="p-2 m-2 hover:text-yellowlight">Home</button>
             <button onClick={() => scrollToSectionWithOffset(section2Ref, 60)} className="p-2 m-2 hover:text-yellowlight">Bio</button>
             <button onClick={() => scrollToSectionWithOffset(section3Ref, 65)} className="p-2 m-2 hover:text-yellowlight">Media</button>
             <button onClick={() => scrollToSectionWithOffset(section4Ref, 65)} className="p-2 m-2 hover:text-yellowlight">Events</button>
@@ -153,8 +153,8 @@ export default function Home() {
           </div>
           <div ref={section3Ref} className="w-screen bg-white">
           <div className="flex justify-center mt-6 text-3xl font-bold font-pro">Media</div>
-          <div className="flex justify-center w-5/6 p-6 mx-auto mb-6 border">
-            <div className="flex flex-col w-full border">
+          <div className="flex justify-center p-6 mx-auto mb-6 sm:w-5/6">
+            <div className="flex flex-col w-full">
               {playlists.map((playlist, index) => (
                 <MediaCard key={index} title={playlist.title} videos={playlist.videos} />
               ))}
@@ -162,7 +162,7 @@ export default function Home() {
           </div>
           </div>
           <div ref={section4Ref} className="h-screen md:w-screen">
-            {/* <Events data={tableData}/> */}
+            <Events data={tableData}/>
           </div>
           <div ref={section5Ref} className="flex justify-center p-4 pt-6 text-center md:h-3/4 md:pb-8 md:pt-8">
             <Contact /> 
