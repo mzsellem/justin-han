@@ -42,63 +42,63 @@ export default function Home({title, link, imageUrl}: any) {
   };
 
 
-  const tableData = [
-    {
-      date: '2023-01-01',
-      time: '12:00 PM',
-      location: 'Event Hall',
-      description: 'Lorem Ipsum',
-      link: 'https://example.com',
-    },
-    {
-      date: '2023-02-15',
-      time: '3:30 PM',
-      location: 'Conference Room',
-      description: 'Dolor Sit Amet',
-      link: 'https://example.com',
-    },
-    {
-      date: '2023-01-01',
-      time: '12:00 PM',
-      location: 'Event Hall',
-      description: 'Lorem Ipsum',
-      link: 'https://example.com',
-    },
-    {
-      date: '2023-02-15',
-      time: '3:30 PM',
-      location: 'Conference Room',
-      description: 'Dolor Sit Amet',
-      link: 'https://example.com',
-    },
-    {
-      date: '2023-01-01',
-      time: '12:00 PM',
-      location: 'Event Hall',
-      description: 'Lorem Ipsum',
-      link: 'https://example.com',
-    },
-    {
-      date: '2023-02-15',
-      time: '3:30 PM',
-      location: 'Conference Room',
-      description: 'Dolor Sit Amet',
-      link: 'https://example.com',
-    },
-    {
-      date: '2023-02-15',
-      time: '3:30 PM',
-      location: 'Conference Room',
-      description: 'Dolor Sit Amet',
-      link: 'https://example.com',
-    },
-    {
-      date: '2023-01-01',
-      time: '12:00 PM',
-      location: 'Event Hall',
-      description: 'Lorem Ipsum',
-      link: 'https://example.com',
-    },
+  const tableData: string | any[] | undefined = [
+    // {
+    //   date: '2023-01-01',
+    //   time: '12:00 PM',
+    //   location: 'Event Hall',
+    //   description: 'Lorem Ipsum',
+    //   link: 'https://example.com',
+    // },
+    // {
+    //   date: '2023-02-15',
+    //   time: '3:30 PM',
+    //   location: 'Conference Room',
+    //   description: 'Dolor Sit Amet',
+    //   link: 'https://example.com',
+    // },
+    // {
+    //   date: '2023-01-01',
+    //   time: '12:00 PM',
+    //   location: 'Event Hall',
+    //   description: 'Lorem Ipsum',
+    //   link: 'https://example.com',
+    // },
+    // {
+    //   date: '2023-02-15',
+    //   time: '3:30 PM',
+    //   location: 'Conference Room',
+    //   description: 'Dolor Sit Amet',
+    //   link: 'https://example.com',
+    // },
+    // {
+    //   date: '2023-01-01',
+    //   time: '12:00 PM',
+    //   location: 'Event Hall',
+    //   description: 'Lorem Ipsum',
+    //   link: 'https://example.com',
+    // },
+    // {
+    //   date: '2023-02-15',
+    //   time: '3:30 PM',
+    //   location: 'Conference Room',
+    //   description: 'Dolor Sit Amet',
+    //   link: 'https://example.com',
+    // },
+    // {
+    //   date: '2023-02-15',
+    //   time: '3:30 PM',
+    //   location: 'Conference Room',
+    //   description: 'Dolor Sit Amet',
+    //   link: 'https://example.com',
+    // },
+    // {
+    //   date: '2023-01-01',
+    //   time: '12:00 PM',
+    //   location: 'Event Hall',
+    //   description: 'Lorem Ipsum',
+    //   link: 'https://example.com',
+    // },
     {
       date: '2023-02-15',
       time: '3:30 PM',
@@ -113,10 +113,12 @@ export default function Home({title, link, imageUrl}: any) {
       <div className="flex">
         <div className="fixed z-10 text-xs font-bold text-white md:text-lg font-pro bg-bluesuit">
           <div className="flex justify-center w-screen h-16 md:space-x-10">
-            <button onClick={() => scrollToSectionWithOffset(section1Ref, 100)} className="p-2 m-2 hover:text-yellowlight">Home</button>
+            <button onClick={() => scrollToSectionWithOffset(section1Ref, 110)} className="p-2 m-2 hover:text-yellowlight">Home</button>
             <button onClick={() => scrollToSectionWithOffset(section2Ref, 60)} className="p-2 m-2 hover:text-yellowlight">Bio</button>
             <button onClick={() => scrollToSectionWithOffset(section3Ref, 65)} className="p-2 m-2 hover:text-yellowlight">Media</button>
-            <button onClick={() => scrollToSectionWithOffset(section4Ref, 65)} className="p-2 m-2 hover:text-yellowlight">Events</button>
+              {tableData.length > 0 && (
+              <button onClick={() => scrollToSectionWithOffset(section4Ref, 65)} className="p-2 m-2 hover:text-yellowlight">Events</button>
+              )}
             <button onClick={() => scrollToSectionWithOffset(section5Ref, 65)} className="p-2 m-2 hover:text-yellowlight">Contact</button>
           </div>
         </div>
@@ -136,23 +138,31 @@ export default function Home({title, link, imageUrl}: any) {
 
       <div>
         <div className="relative flex flex-col items-center space-y-8 bg-white md:space-y-18 space">
-          <div ref={section2Ref} className="bg-white">
-            <Bio />
-          </div>
-          <div ref={section3Ref} className="w-screen bg-white">
-          <div className="flex justify-center mt-6 text-3xl font-bold font-pro">Media</div>
-          <div className="flex justify-center p-6 mx-auto mb-6 sm:w-5/6">
-            <div className="sm:w-full sm:flex-col sm:flex ">
-              <MediaCard title={title} link={link} imageUrl={imageUrl} />
+            <div ref={section2Ref} className="bg-white">
+              <Bio />
             </div>
-          </div>
-          </div>
-          <div ref={section4Ref} className="h-screen md:w-screen">
-            <Events data={tableData}/>
-          </div>
+            <div ref={section3Ref} className="w-screen bg-white">
+              <div className="flex justify-center mt-6 mb-6 text-3xl font-bold font-pro">Media</div>
+              <div className="flex justify-center p-6 mx-auto mb-52 sm:w-5/6">
+                <div className="sm:w-full sm:flex-col sm:flex ">
+                  <MediaCard title={title} link={link} imageUrl={imageUrl} />
+                </div>
+              </div>
+            </div>
+            {tableData.length > 0 ? (
+          <>
+            <div ref={section4Ref} className="h-screen md:w-screen">
+              <Events data={tableData} />
+            </div>
+            <div ref={section5Ref} className="flex justify-center p-4 pt-6 text-center md:h-3/4 md:pb-8 md:pt-8">
+              <Contact />
+            </div>
+          </>
+        ) : (
           <div ref={section5Ref} className="flex justify-center p-4 pt-6 text-center md:h-3/4 md:pb-8 md:pt-8">
-            <Contact /> 
+            <Contact />
           </div>
+        )}
         </div>
       </div>
     </>
