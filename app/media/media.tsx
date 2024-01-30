@@ -31,33 +31,28 @@ const MediaCard: React.FC<Props> = () => {
         link: 'https://www.youtube.com/watch?v=-CaGIboDT4c&list=PLLPThjvgshhWcgWDoEDgaknFNNwgyZULd',
         imageUrl: 'handel.png',
       },
-      {
-        title: "Handel's Messiah",
-        link: 'https://www.youtube.com/watch?v=-CaGIboDT4c&list=PLLPThjvgshhWcgWDoEDgaknFNNwgyZULd',
-        imageUrl: 'handel.png',
-      },
   ];
 
 return (
     <>
-        <div className="flex flex-row justify-center overflow-x-auto text-center">
-        {playlists.map((playlist, index) => (
-          <div key={index} className="mb-10 ml-4 mr-4 w-52">
-            <div className="flex flex-col items-center font-bold text-md font-pro">
-              <h1 className="mb-2">{playlist.title}</h1>
-              <div className="flex items-center justify-center text-center">
-                <a href={playlist.link} target="_blank" rel="noopener noreferrer">
-                  <img
-                    src={playlist.imageUrl}
-                    className="rounded-xl"
-                    alt={`Portrait of ${playlist.title}`}
-                  />
-                </a>
-              </div>
+        <div className="text-center sm:overflow-x-auto sm:flex">
+      {playlists.map((playlist, index) => (
+        <div key={index} className="flex-shrink-0 mb-10 ml-4 mr-4 w-52">
+          <div className="flex flex-col items-center font-bold text-md font-pro">
+            <h1 className="mb-2">{playlist.title}</h1>
+            <div className="flex items-center justify-center text-center">
+              <a href={playlist.link} target="_blank" rel="noopener noreferrer">
+                <img
+                  src={playlist.imageUrl}
+                  className="rounded-xl"
+                  alt={`Portrait of ${playlist.title}`}
+                />
+              </a>
             </div>
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
+    </div>
     </>
 )
 }
