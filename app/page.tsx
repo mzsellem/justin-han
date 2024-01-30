@@ -6,13 +6,13 @@ import MediaCard from "./media/media";
 import Events from "./events/events";
 import Contact from "./contact/contact";
 
-interface Props {
-  title: String,
-  link: String,
-  imageUrl: String, 
-}
+// interface Props {
+//   title: String,
+//   link: String,
+//   imageUrl: String, 
+// }
 
-export default function Home({title, link, imageUrl}: Props) {
+export default function Home({title, link, imageUrl}: any) {
   const sectionRefs = {
     home: useRef(null),
     bio: useRef(null),

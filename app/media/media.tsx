@@ -36,16 +36,6 @@ const MediaCard: React.FC<Props> = () => {
         link: 'https://www.youtube.com/watch?v=-CaGIboDT4c&list=PLLPThjvgshhWcgWDoEDgaknFNNwgyZULd',
         imageUrl: 'handel.png',
       },
-      {
-        title: "Handel's Messiah",
-        link: 'https://www.youtube.com/watch?v=-CaGIboDT4c&list=PLLPThjvgshhWcgWDoEDgaknFNNwgyZULd',
-        imageUrl: 'handel.png',
-      },
-      {
-        title: "Handel's Messiah",
-        link: 'https://www.youtube.com/watch?v=-CaGIboDT4c&list=PLLPThjvgshhWcgWDoEDgaknFNNwgyZULd',
-        imageUrl: 'handel.png',
-      },
   ];
 
 return (
