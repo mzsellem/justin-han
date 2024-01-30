@@ -6,7 +6,13 @@ import MediaCard from "./media/media";
 import Events from "./events/events";
 import Contact from "./contact/contact";
 
-export default function Home() {
+interface Props {
+  title: String,
+  link: String,
+  imageUrl: String, 
+}
+
+export default function Home({title, link, imageUrl}: Props) {
   const sectionRefs = {
     home: useRef(null),
     bio: useRef(null),
@@ -35,24 +41,6 @@ export default function Home() {
     }
   };
 
-  const playlists = [
-    // {
-    //   title: '2024 International Conducting Workshop and Festival',
-    //   videos: ['15FhxsmcZq8?si=Cbr2F6ozzbQrwA5o', 'DK-me5451L8?si=CK0dXu_J4pcpTfBc', 'G7_tw8IDNoE?si=EZXKcVEJTEkZi47f', 'VMAB9UztppU?si=sOfOLc7pUG_nOtxM'],
-    // },
-    {
-      title: 'Mozart Concert',
-      videos: ['BdFr9vdz-SU?si=TgCx4yOsMtFuu3P_', 'KhW5EthdSXI?si=BLEcNyyXjt9_pIaD', 'KhW5EthdSXI?si=9zxynfY7_IsZwxD3', 'iJGEvFzBs-Y?si=txqtNvy9W8gCY1xG', 'AqWB2iNaoLA?si=aoGHiIWvrs1rQ4F9', '5bvLJ1gKjxI?si=v2n3Y7irC3luZCtU', 'd1wpzCKHd74?si=nXvFjvo5B4lW0pPq', 'j-GxKTKnGck?si=oMqDmufEsAQ9ACiB'],
-    },
-    {
-      title: 'Christmas Oratorio',
-      videos: ['RDmY90Xs3NQ?si=RS4aYVL1K0bVJG7c', 'darXK32zReE?si=iJFFqSrBbfCPb3Xt', 'nr47uLHQ1l4?si=OqLTY1pRgbp3RumC', 'Yfo62UQXoBo?si=akhkC7Mc52Mn32Uv', 'X6Q3IuyZrLM?si=h5J4wCCRZFNhH90G', 'V-zFfk5t1mQ?si=FqigWz-wl5eVcDIJ', 'A4B4GWGU0Ww?si=OM6T6J533yfMEBeW', 'H1XxkI3glHM?si=9D8Q2hcj7lRsGHIK', '8JnW7Z1lf1I?si=ItTcDQQln90eHyDU', 'p07Y3uEE1nw?si=vpfrTKgnZQv6Cj_0'],
-    },
-    {
-      title: 'Masters Piano Recital',
-      videos: ['-4XrN1x2iT4?si=ESDH-2ET_K8InUV-', '01u5_H65U7o?si=DgIRJ4OE6NUYe7Cy', 'EiwW3a_pjXU?si=HOOVBZrmJE0EAkx6', 'XZsKrMpgdRw?si=uYFZIZnTEgoRytxy', 'XZsKrMpgdRw?si=uYFZIZnTEgoRytxy', 'hK6dzVJe6oM?si=I_aD37k5336afZ_X', 'pOj4zM6Qt-g?si=7XkUCjy06-lhZeJ_'],
-    },
-  ];
 
   const tableData = [
     {
@@ -135,7 +123,7 @@ export default function Home() {
 
         <div className="flex">
           <div className="fixed inset-0 flex flex-col justify-end bg-center bg-cover z-8" style={{ backgroundImage: 'url("justin-park.png")' }}>
-            <div className="flex justify-center p-2 text-white bg-bluesuit font-pro text-md">Updated: January 2024</div>
+            <div className="flex justify-center p-2 text-white bg-bluesuit font-pro text-md">Last Updated 2024</div>
           </div>
         </div>
 
@@ -147,7 +135,7 @@ export default function Home() {
       </div>
 
       <div>
-        <div className="relative flex flex-col items-center space-y-4 bg-white md:space-y-18 space">
+        <div className="relative flex flex-col items-center space-y-8 bg-white md:space-y-18 space">
           <div ref={section2Ref} className="bg-white">
             <Bio />
           </div>
@@ -155,9 +143,7 @@ export default function Home() {
           <div className="flex justify-center mt-6 text-3xl font-bold font-pro">Media</div>
           <div className="flex justify-center p-6 mx-auto mb-6 sm:w-5/6">
             <div className="flex flex-col w-full">
-              {playlists.map((playlist, index) => (
-                <MediaCard key={index} title={playlist.title} videos={playlist.videos} />
-              ))}
+              <MediaCard title={title} link={link} imageUrl={imageUrl} />
             </div>
           </div>
           </div>

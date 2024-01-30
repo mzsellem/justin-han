@@ -12,16 +12,4 @@
         margin-bottom: 165%;
     }
 } */
-
-/* Add these styles to your CSS file or component */
-.mobile {
-    width: 100%; /* Set the width to 100% for responsiveness */
-  }
-  
-  @media (max-width: 640px) {
-    /* Adjust styles for screens with a maximum width of 640px (typical for mobile devices) */
-    .mobile {
-      width: 50%; /* Set the width to 100% for responsiveness on smaller screens */
-    }
-  }
   

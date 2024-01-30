@@ -1,73 +1,74 @@
-// Import necessary components and libraries
-import React, { Component } from "react";
-import Slider, { Settings } from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import YouTube from "react-youtube";
+interface Props {
+    title: String,
+    link: String,
+    imageUrl: String, 
+}
 
-function SampleNextArrow(props: any) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{ ...style, display: "block", background: "#4c4a54" }}
-        onClick={onClick}
-      />
-    );
-  }
-  
-  function SamplePrevArrow(props: any) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{ ...style, display: "block", background: "#4c4a54" }}
-        onClick={onClick}
-      />
-    );
-  }
+const MediaCard: React.FC<Props> = () => {
+    const playlists = [
+    {
+        title: 'International Conducting Workshop/Festival',
+        link: 'https://www.youtube.com/watch?v=15FhxsmcZq8&list=PLLPThjvgshhW2WX9AcSqnTw202xwF6LZn',
+        imageUrl: 'justinczechconduct.png',
+    },
+    {
+        title: 'Mozart Concert',
+        link: 'https://www.youtube.com/watch?v=BdFr9vdz-SU&list=PLLPThjvgshhUAI_VCYpJEXm2DVcrlEzMX',
+        imageUrl: 'mozart.png',
+    },
+    {
+        title: 'Christmas Oratorio',
+        link: 'https://www.youtube.com/watch?v=RDmY90Xs3NQ&list=PLLPThjvgshhWNfcqG3pAdfbKTWbOG0LXV',
+        imageUrl: 'emory-xmas-tree.png',
+    },
+    {
+        title: 'Masters Chamber Recital',
+        link: 'https://www.youtube.com/watch?v=END8x_udfQ4&list=PLLPThjvgshhVgXVJPlMGlngG0VeUo099a',
+        imageUrl: 'ugamusic.png',
+    },
+    {
+        title: "Handel's Messiah",
+        link: 'https://www.youtube.com/watch?v=-CaGIboDT4c&list=PLLPThjvgshhWcgWDoEDgaknFNNwgyZULd',
+        imageUrl: 'handel.png',
+      },
+      {
+        title: "Handel's Messiah",
+        link: 'https://www.youtube.com/watch?v=-CaGIboDT4c&list=PLLPThjvgshhWcgWDoEDgaknFNNwgyZULd',
+        imageUrl: 'handel.png',
+      },
+      {
+        title: "Handel's Messiah",
+        link: 'https://www.youtube.com/watch?v=-CaGIboDT4c&list=PLLPThjvgshhWcgWDoEDgaknFNNwgyZULd',
+        imageUrl: 'handel.png',
+      },
+      {
+        title: "Handel's Messiah",
+        link: 'https://www.youtube.com/watch?v=-CaGIboDT4c&list=PLLPThjvgshhWcgWDoEDgaknFNNwgyZULd',
+        imageUrl: 'handel.png',
+      },
+  ];
 
-
-
-// Component for individual video item
-const VideoItem = ({ videoId, index }: any) => (
-  <div key={index} className="w-full">
-    <YouTube
-      videoId={videoId}
-      opts={{
-        height: "200",
-        width: "300",
-        playerVars: { autoplay: 0 },
-        title: `${index + 1}`,
-      }}
-    />
-  </div>
-);
-
-// Component for displaying a playlist with a Slider
-const MediaCard = ({ title, videos }: any) => {
-  const settings: Settings = {
-    dots: true,
-    // arrows: true,
-    // nextArrow: <SampleNextArrow />,
-    // prevArrow: <SamplePrevArrow />,
-    lazyLoad: "ondemand",
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1, // Show one video at a time
-    slidesToScroll: 1,
-  };
-
-  return (
-    <div className="p-3 mb-4">
-      <h2 className="text-2xl font-bold">{title}</h2>
-      <Slider {...settings}>
-        {videos.map((video: any, index: any) => (
-          <VideoItem key={index} videoId={video} index={index} />
+return (
+    <>
+        <div className="flex flex-row justify-center overflow-x-auto text-center">
+        {playlists.map((playlist, index) => (
+          <div key={index} className="mb-10 ml-4 mr-4 w-52">
+            <div className="flex flex-col items-center font-bold text-md font-pro">
+              <h1 className="mb-2">{playlist.title}</h1>
+              <div className="flex items-center justify-center text-center">
+                <a href={playlist.link} target="_blank" rel="noopener noreferrer">
+                  <img
+                    src={playlist.imageUrl}
+                    className="rounded-xl"
+                    alt={`Portrait of ${playlist.title}`}
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
         ))}
-      </Slider>
-    </div>
-  );
-};
-
+      </div>
+    </>
+)
+}
 export default MediaCard;
