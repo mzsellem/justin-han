@@ -15,7 +15,7 @@ interface EventsTableProps {
 
 const EventsTable: React.FC<EventsTableProps> = ({ data = [] }) => {
   const wrapperStyle = {
-    minHeight: data.length > 0 ? 'auto' : '0',
+    minHeight: data.length > 0 ? 'auto' : '100',
   };
   return (
     <div className="flex flex-col items-center p-4 text-sm bg-white md:text-lg md:p-6" style={wrapperStyle}>

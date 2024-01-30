@@ -99,13 +99,13 @@ export default function Home({title, link, imageUrl}: any) {
     //   description: 'Lorem Ipsum',
     //   link: 'https://example.com',
     // },
-    {
-      date: '2023-02-15',
-      time: '3:30 PM',
-      location: 'Conference Room',
-      description: 'Dolor Sit Amet',
-      link: 'https://example.com',
-    },
+    // {
+    //   date: '2023-02-15',
+    //   time: '3:30 PM',
+    //   location: 'Conference Room',
+    //   description: 'Dolor Sit Amet',
+    //   link: 'https://example.com',
+    // },
   ];
 
   return (
@@ -143,26 +143,22 @@ export default function Home({title, link, imageUrl}: any) {
             </div>
             <div ref={section3Ref} className="w-screen bg-white">
               <div className="flex justify-center mt-6 mb-6 text-3xl font-bold font-pro">Media</div>
-              <div className="flex justify-center p-6 mx-auto mb-52 sm:w-5/6">
+              <div className="flex justify-center p-6 mx-auto sm:w-5/6 mb-52">
                 <div className="sm:w-full sm:flex-col sm:flex ">
                   <MediaCard title={title} link={link} imageUrl={imageUrl} />
                 </div>
               </div>
             </div>
             {tableData.length > 0 ? (
-          <>
-            <div ref={section4Ref} className="h-screen md:w-screen">
-              <Events data={tableData} />
-            </div>
-            <div ref={section5Ref} className="flex justify-center p-4 pt-6 text-center md:h-3/4 md:pb-8 md:pt-8">
-              <Contact />
-            </div>
-          </>
-        ) : (
-          <div ref={section5Ref} className="flex justify-center p-4 pt-6 text-center md:h-3/4 md:pb-8 md:pt-8">
+              <div ref={section4Ref} className="h-screen md:w-screen">
+                <Events data={tableData} />
+              </div>
+            ) : (
+              <></>
+        )}
+        <div ref={section5Ref} className="flex justify-center p-4 pt-6 text-center md:h-3/4 md:pb-8 md:pt-8">
             <Contact />
           </div>
-        )}
         </div>
       </div>
     </>
