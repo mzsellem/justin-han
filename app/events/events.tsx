@@ -15,10 +15,10 @@ interface EventsTableProps {
 
 const EventsTable: React.FC<EventsTableProps> = ({ data = [] }) => {
   const wrapperStyle = {
-    minHeight: data.length > 0 ? 'auto' : '100',
+    minHeight: data.length > 0 ? 'auto' : '0',
   };
   return (
-    <div className="flex flex-col items-center p-4 text-sm bg-white md:text-lg md:p-6" style={wrapperStyle}>
+    <div className="flex flex-col items-center p-4 text-sm bg-white border md:text-lg md:p-6" style={wrapperStyle}>
       <div className="mb-8 text-3xl font-bold text-center font-pro">Events</div>
       <div className="w-full overflow-x-auto">
         <table className="min-w-full mx-auto text-center border border-collapse border-gray-300 table-auto sm:w-2/3 md:w-1/2 lg:w-2/3 xl:w-1/2 font-pro">

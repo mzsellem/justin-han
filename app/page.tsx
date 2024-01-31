@@ -142,9 +142,9 @@ export default function Home({title, link, imageUrl}: any) {
               <Bio />
             </div>
             <div ref={section3Ref} className="w-screen bg-white">
-              <div className="flex justify-center mt-6 mb-6 text-3xl font-bold font-pro">Media</div>
-              <div className="flex justify-center p-6 mx-auto sm:w-5/6 mb-52">
-                <div className="sm:w-full sm:flex-col sm:flex ">
+              <div className="flex justify-center mt-6 mb-2 text-3xl font-bold font-pro">Media</div>
+              <div className="flex justify-center p-6 mx-auto sm:w-5/6">
+                <div className="sm:w-full sm:flex-col sm:flex">
                   <MediaCard title={title} link={link} imageUrl={imageUrl} />
                 </div>
               </div>

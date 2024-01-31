@@ -7,7 +7,7 @@ interface Props {
 const MediaCard: React.FC<Props> = () => {
     const playlists = [
     {
-        title: 'International Conducting Workshop/Festival',
+        title: 'International Conducting',
         link: 'https://www.youtube.com/watch?v=15FhxsmcZq8&list=PLLPThjvgshhW2WX9AcSqnTw202xwF6LZn',
         imageUrl: 'justinczechconduct.png',
     },
@@ -35,7 +35,7 @@ const MediaCard: React.FC<Props> = () => {
 
 return (
     <>
-        <div className="text-center sm:overflow-x-auto sm:flex">
+        <div className="p-4 mb-4 text-center border border-black rounded-xl sm:overflow-x-auto sm:flex">
       {playlists.map((playlist, index) => (
         <div key={index} className="flex-shrink-0 mb-10 ml-4 mr-4 w-52">
           <div className="flex flex-col items-center font-bold text-md font-pro">
@@ -52,6 +52,9 @@ return (
           </div>
         </div>
       ))}
+    </div>
+    <div className="flex items-center justify-center space-x-10 border border-black rounded-xl">
+      <img className="p-2" src="linkedin.png" alt="linkedin logo" style={{ width: '50px' }}/>
     </div>
     </>
 )
