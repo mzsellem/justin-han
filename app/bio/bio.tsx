@@ -10,7 +10,7 @@ export default function Bio() {
                 <img className="border rounded-xl" src="/conductor-justin.png" alt="Conductor Justin" />
             </div>
             <div className="flex flex-col p-4 md:w-1/3">
-                <div className="relative mb-4 space-x-2 text-3xl font-bold text-center md:flex md:items-left font-pro">
+                <div className="relative flex justify-center mb-4 space-x-2 text-3xl font-bold text-center border md:flex md:items-left font-pro">
                     <h1 className="flex items-center justify-center">Meet Justin Han</h1>
                     <a href="https://www.linkedin.com/in/jhan719/"><img className={`transform ${isHovered ? 'scale-110' : 'scale-300'} p-2 transition-transform duration-300 ease-in-out`}
         onMouseEnter={() => setIsHovered(true)}
