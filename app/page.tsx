@@ -124,7 +124,11 @@ export default function Home({title, link, imageUrl}: any) {
         </div>
 
         <div className="flex">
-          <div className="fixed inset-0 flex flex-col justify-end bg-center bg-cover z-8" style={{ backgroundImage: 'url("justin-park.png")' }}>
+          <div className="fixed inset-0 flex flex-col justify-end bg-center bg-cover z-8" style={{ 
+            backgroundImage: 'url("crazy-rich-justin.png")',
+            backgroundPositionY: '30%' // Adjust the position here (e.g., 'center', 'top', 'bottom', '50%', etc.)
+        
+          }}>
             <div className="flex justify-center p-2 text-white bg-bluesuit font-pro text-md">Last Updated 2024</div>
           </div>
         </div>
