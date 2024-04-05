@@ -24,7 +24,7 @@ const MediaCard: React.FC<Props> = () => {
     {
         title: 'Masters Chamber Recital',
         link: 'https://www.youtube.com/watch?v=END8x_udfQ4&list=PLLPThjvgshhVgXVJPlMGlngG0VeUo099a',
-        imageUrl: 'ugamusic.png',
+        imageUrl: 'ga-state-music',
     },
     {
         title: "Handel's Messiah",
@@ -44,7 +44,7 @@ return (
               <a href={playlist.link} target="_blank" rel="noopener noreferrer">
                 <img
                   src={playlist.imageUrl}
-                  className="rounded-xl"
+                  className="border-2 rounded-xl"
                   alt={`Portrait of ${playlist.title}`}
                 />
               </a>
