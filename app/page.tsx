@@ -108,11 +108,25 @@ export default function Home({title, link, imageUrl}: any) {
     // },
   ];
 
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  // Function to check if the screen width is below a certain threshold
+  const checkIsMobile = () => {
+    setIsMobile(window.innerWidth < 768); // Adjust the threshold as needed
+  };
+
+  // Add event listener to check screen width on mount
+  React.useEffect(() => {
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+    return () => window.removeEventListener('resize', checkIsMobile);
+  }, []);
+
   return (
     <>
       <div className="flex">
         <div className="fixed z-10 text-xs font-bold text-white md:text-lg font-pro bg-bluesuit">
-          <div className="flex items-center justify-between w-screen h-16 md:space-x-10">
+          <div className="flex items-center justify-center w-screen h-16 md:justify-between md:space-x-10">
             <div className="flex items-center">
               <button onClick={() => scrollToSectionWithOffset(section1Ref, 110)} className="p-2 m-2 hover:text-yellowlight">Home</button>
               <button onClick={() => scrollToSectionWithOffset(section2Ref, 60)} className="p-2 m-2 hover:text-yellowlight">Bio</button>
@@ -122,10 +136,14 @@ export default function Home({title, link, imageUrl}: any) {
                 )}
               <button onClick={() => scrollToSectionWithOffset(section5Ref, 65)} className="p-2 m-2 hover:text-yellowlight">Contact</button>
             </div>
-            <div className="flex items-center">
-              <div className="flex mr-2">LOGO HERE</div>
-              <h1 className="p-2 mr-3 text-xs font-bold text-black rounded-md md:text-xl bg-grey font-pro">JUSTIN HAN</h1>
-            </div>
+            <div className="flex items-center text-center border">LOGO HERE</div>
+            {/* Conditionally render the <h1> only if not on mobile */}
+        {!isMobile && (
+          <div className="flex items-center">
+            <h1 className="p-2 mr-3 text-xs font-bold text-black border rounded-md md:text-white md:text-xl font-pro">JUSTIN HAN</h1>
+          </div>
+        )}
+        
           </div>
         </div>
 
@@ -139,9 +157,12 @@ export default function Home({title, link, imageUrl}: any) {
           </div>
         </div>
 
-        <div className="flex justify-center w-screen h-screen">
-          <div ref={section1Ref} className="absolute mt-6 top-20 md:right-0 md:mr-6">
-            {/* <Intro /> */}
+        <div className="flex">
+          <div className="flex justify-center w-screen h-screen">
+            <div ref={section1Ref} className={`absolute -mt-1 top-20 ${isMobile ? '' : 'hidden'} md:right-0 md:mr-6`}>
+              {/* Render <Intro /> only if isMobile is true */}
+              {isMobile && <Intro />}
+            </div>
           </div>
         </div>
       </div>
