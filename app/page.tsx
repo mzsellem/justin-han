@@ -112,14 +112,20 @@ export default function Home({title, link, imageUrl}: any) {
     <>
       <div className="flex">
         <div className="fixed z-10 text-xs font-bold text-white md:text-lg font-pro bg-bluesuit">
-          <div className="flex justify-center w-screen h-16 md:space-x-10">
-            <button onClick={() => scrollToSectionWithOffset(section1Ref, 110)} className="p-2 m-2 hover:text-yellowlight">Home</button>
-            <button onClick={() => scrollToSectionWithOffset(section2Ref, 60)} className="p-2 m-2 hover:text-yellowlight">Bio</button>
-            <button onClick={() => scrollToSectionWithOffset(section3Ref, 65)} className="p-2 m-2 hover:text-yellowlight">Media</button>
-              {tableData.length > 0 && (
-              <button onClick={() => scrollToSectionWithOffset(section4Ref, 65)} className="p-2 m-2 hover:text-yellowlight">Events</button>
-              )}
-            <button onClick={() => scrollToSectionWithOffset(section5Ref, 65)} className="p-2 m-2 hover:text-yellowlight">Contact</button>
+          <div className="flex items-center justify-between w-screen h-16 md:space-x-10">
+            <div className="flex items-center">
+              <button onClick={() => scrollToSectionWithOffset(section1Ref, 110)} className="p-2 m-2 hover:text-yellowlight">Home</button>
+              <button onClick={() => scrollToSectionWithOffset(section2Ref, 60)} className="p-2 m-2 hover:text-yellowlight">Bio</button>
+              <button onClick={() => scrollToSectionWithOffset(section3Ref, 65)} className="p-2 m-2 hover:text-yellowlight">Media</button>
+                {tableData.length > 0 && (
+                <button onClick={() => scrollToSectionWithOffset(section4Ref, 65)} className="p-2 m-2 hover:text-yellowlight">Events</button>
+                )}
+              <button onClick={() => scrollToSectionWithOffset(section5Ref, 65)} className="p-2 m-2 hover:text-yellowlight">Contact</button>
+            </div>
+            <div className="flex items-center">
+              <div className="flex mr-2">LOGO HERE</div>
+              <h1 className="p-2 mr-3 text-xs font-bold text-black rounded-md md:text-xl bg-grey font-pro">JUSTIN HAN</h1>
+            </div>
           </div>
         </div>
 
@@ -135,7 +141,7 @@ export default function Home({title, link, imageUrl}: any) {
 
         <div className="flex justify-center w-screen h-screen">
           <div ref={section1Ref} className="absolute mt-6 top-20 md:right-0 md:mr-6">
-            <Intro />
+            {/* <Intro /> */}
           </div>
         </div>
       </div>
